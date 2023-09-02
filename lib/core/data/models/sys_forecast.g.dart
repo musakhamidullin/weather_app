@@ -8,7 +8,7 @@ part of 'sys_forecast.dart';
 
 _$_SysForecast _$$_SysForecastFromJson(Map<String, dynamic> json) =>
     _$_SysForecast(
-      pod: json['pod'] as String?,
+      pod: json['pod'] as String? ?? '',
     );
 
 Map<String, dynamic> _$$_SysForecastToJson(_$_SysForecast instance) =>

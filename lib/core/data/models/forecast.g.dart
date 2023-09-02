@@ -8,27 +8,28 @@ part of 'forecast.dart';
 
 _$_ForecastList _$$_ForecastListFromJson(Map<String, dynamic> json) =>
     _$_ForecastList(
-      dt: json['dt'] as int?,
+      dt: json['dt'] as int? ?? 0,
       main: json['main'] == null
-          ? null
+          ? ForecastList.defMain
           : MainInfo.fromJson(json['main'] as Map<String, dynamic>),
       weather: (json['weather'] as List<dynamic>?)
-          ?.map((e) => Weather.fromJson(e as Map<String, dynamic>))
-          .toList(),
+              ?.map((e) => Weather.fromJson(e as Map<String, dynamic>))
+              .toList() ??
+          const [],
       clouds: json['clouds'] == null
-          ? null
+          ? ForecastList.defClouds
           : Clouds.fromJson(json['clouds'] as Map<String, dynamic>),
       wind: json['wind'] == null
-          ? null
+          ? ForecastList.defWind
           : Wind.fromJson(json['wind'] as Map<String, dynamic>),
-      visibility: json['visibility'] as int?,
-      pop: (json['pop'] as num?)?.toDouble(),
+      visibility: json['visibility'] as int? ?? 0,
+      pop: (json['pop'] as num?)?.toDouble() ?? 0.0,
       sys: json['sys'] == null
-          ? null
+          ? ForecastList.defSysforecast
           : SysForecast.fromJson(json['sys'] as Map<String, dynamic>),
-      dtTxt: json['dt_txt'] as String?,
+      dtTxt: json['dt_txt'] as String? ?? '',
       rain: json['rain'] == null
-          ? null
+          ? ForecastList.defRain
           : Rain.fromJson(json['rain'] as Map<String, dynamic>),
     );
 

@@ -13,18 +13,28 @@ part 'forecast.g.dart';
 @freezed
 class ForecastList with _$ForecastList {
   const factory ForecastList({
-    @JsonKey(name: 'dt') int? dt,
-    @JsonKey(name: 'main') MainInfo? main,
-    @JsonKey(name: 'weather') List<Weather>? weather,
-    @JsonKey(name: 'clouds') Clouds? clouds,
-    @JsonKey(name: 'wind') Wind? wind,
-    @JsonKey(name: 'visibility') int? visibility,
-    @JsonKey(name: 'pop') double? pop,
-    @JsonKey(name: 'sys') SysForecast? sys,
-    @JsonKey(name: 'dt_txt') String? dtTxt,
-    @JsonKey(name: 'rain') Rain? rain,
+    @JsonKey(name: 'dt') @Default(0) int dt,
+    @JsonKey(name: 'main') @Default(ForecastList.defMain) MainInfo main,
+    @JsonKey(name: 'weather') @Default([]) List<Weather> weather,
+    @JsonKey(name: 'clouds') @Default(ForecastList.defClouds) Clouds clouds,
+    @JsonKey(name: 'wind') @Default(ForecastList.defWind) Wind wind,
+    @JsonKey(name: 'visibility') @Default(0) int visibility,
+    @JsonKey(name: 'pop') @Default(0.0) double pop,
+    @JsonKey(name: 'sys') @Default(ForecastList.defSysforecast) SysForecast sys,
+    @JsonKey(name: 'dt_txt') @Default('') String dtTxt,
+    @JsonKey(name: 'rain') @Default(ForecastList.defRain) Rain rain,
   }) = _ForecastList;
 
-  factory ForecastList.fromJson(Map<String, dynamic> json) => _$ForecastListFromJson(json);
+  static const defMain = MainInfo();
 
+  static const defClouds = Clouds();
+
+  static const defWind = Wind();
+
+  static const defSysforecast = SysForecast();
+
+  static const defRain = Rain();
+
+  factory ForecastList.fromJson(Map<String, dynamic> json) =>
+      _$ForecastListFromJson(json);
 }

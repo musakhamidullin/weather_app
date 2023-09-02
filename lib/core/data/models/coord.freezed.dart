@@ -21,9 +21,9 @@ Coord _$CoordFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Coord {
   @JsonKey(name: 'lon')
-  double? get lon => throw _privateConstructorUsedError;
+  double get lon => throw _privateConstructorUsedError;
   @JsonKey(name: 'lat')
-  double? get lat => throw _privateConstructorUsedError;
+  double get lat => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -36,7 +36,7 @@ abstract class $CoordCopyWith<$Res> {
       _$CoordCopyWithImpl<$Res, Coord>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'lon') double? lon, @JsonKey(name: 'lat') double? lat});
+      {@JsonKey(name: 'lon') double lon, @JsonKey(name: 'lat') double lat});
 }
 
 /// @nodoc
@@ -52,18 +52,18 @@ class _$CoordCopyWithImpl<$Res, $Val extends Coord>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lon = freezed,
-    Object? lat = freezed,
+    Object? lon = null,
+    Object? lat = null,
   }) {
     return _then(_value.copyWith(
-      lon: freezed == lon
+      lon: null == lon
           ? _value.lon
           : lon // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lat: freezed == lat
+              as double,
+      lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -75,7 +75,7 @@ abstract class _$$_CoordCopyWith<$Res> implements $CoordCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'lon') double? lon, @JsonKey(name: 'lat') double? lat});
+      {@JsonKey(name: 'lon') double lon, @JsonKey(name: 'lat') double lat});
 }
 
 /// @nodoc
@@ -87,18 +87,18 @@ class __$$_CoordCopyWithImpl<$Res> extends _$CoordCopyWithImpl<$Res, _$_Coord>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lon = freezed,
-    Object? lat = freezed,
+    Object? lon = null,
+    Object? lat = null,
   }) {
     return _then(_$_Coord(
-      lon: freezed == lon
+      lon: null == lon
           ? _value.lon
           : lon // ignore: cast_nullable_to_non_nullable
-              as double?,
-      lat: freezed == lat
+              as double,
+      lat: null == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -107,17 +107,18 @@ class __$$_CoordCopyWithImpl<$Res> extends _$CoordCopyWithImpl<$Res, _$_Coord>
 @JsonSerializable()
 class _$_Coord implements _Coord {
   const _$_Coord(
-      {@JsonKey(name: 'lon') this.lon, @JsonKey(name: 'lat') this.lat});
+      {@JsonKey(name: 'lon') this.lon = 0.0,
+      @JsonKey(name: 'lat') this.lat = 0.0});
 
   factory _$_Coord.fromJson(Map<String, dynamic> json) =>
       _$$_CoordFromJson(json);
 
   @override
   @JsonKey(name: 'lon')
-  final double? lon;
+  final double lon;
   @override
   @JsonKey(name: 'lat')
-  final double? lat;
+  final double lat;
 
   @override
   String toString() {
@@ -153,17 +154,17 @@ class _$_Coord implements _Coord {
 
 abstract class _Coord implements Coord {
   const factory _Coord(
-      {@JsonKey(name: 'lon') final double? lon,
-      @JsonKey(name: 'lat') final double? lat}) = _$_Coord;
+      {@JsonKey(name: 'lon') final double lon,
+      @JsonKey(name: 'lat') final double lat}) = _$_Coord;
 
   factory _Coord.fromJson(Map<String, dynamic> json) = _$_Coord.fromJson;
 
   @override
   @JsonKey(name: 'lon')
-  double? get lon;
+  double get lon;
   @override
   @JsonKey(name: 'lat')
-  double? get lat;
+  double get lat;
   @override
   @JsonKey(ignore: true)
   _$$_CoordCopyWith<_$_Coord> get copyWith =>

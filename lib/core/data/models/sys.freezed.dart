@@ -21,15 +21,15 @@ Sys _$SysFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Sys {
   @JsonKey(name: 'type')
-  int? get type => throw _privateConstructorUsedError;
+  int get type => throw _privateConstructorUsedError;
   @JsonKey(name: 'id')
-  int? get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'country')
-  String? get country => throw _privateConstructorUsedError;
+  String get country => throw _privateConstructorUsedError;
   @JsonKey(name: 'sunrise')
-  int? get sunrise => throw _privateConstructorUsedError;
+  int get sunrise => throw _privateConstructorUsedError;
   @JsonKey(name: 'sunset')
-  int? get sunset => throw _privateConstructorUsedError;
+  int get sunset => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -42,11 +42,11 @@ abstract class $SysCopyWith<$Res> {
       _$SysCopyWithImpl<$Res, Sys>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'type') int? type,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'country') String? country,
-      @JsonKey(name: 'sunrise') int? sunrise,
-      @JsonKey(name: 'sunset') int? sunset});
+      {@JsonKey(name: 'type') int type,
+      @JsonKey(name: 'id') int id,
+      @JsonKey(name: 'country') String country,
+      @JsonKey(name: 'sunrise') int sunrise,
+      @JsonKey(name: 'sunset') int sunset});
 }
 
 /// @nodoc
@@ -61,33 +61,33 @@ class _$SysCopyWithImpl<$Res, $Val extends Sys> implements $SysCopyWith<$Res> {
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? id = freezed,
-    Object? country = freezed,
-    Object? sunrise = freezed,
-    Object? sunset = freezed,
+    Object? type = null,
+    Object? id = null,
+    Object? country = null,
+    Object? sunrise = null,
+    Object? sunset = null,
   }) {
     return _then(_value.copyWith(
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: freezed == id
+              as int,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      country: freezed == country
+              as int,
+      country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sunrise: freezed == sunrise
+              as String,
+      sunrise: null == sunrise
           ? _value.sunrise
           : sunrise // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sunset: freezed == sunset
+              as int,
+      sunset: null == sunset
           ? _value.sunset
           : sunset // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -99,11 +99,11 @@ abstract class _$$_SysCopyWith<$Res> implements $SysCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'type') int? type,
-      @JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'country') String? country,
-      @JsonKey(name: 'sunrise') int? sunrise,
-      @JsonKey(name: 'sunset') int? sunset});
+      {@JsonKey(name: 'type') int type,
+      @JsonKey(name: 'id') int id,
+      @JsonKey(name: 'country') String country,
+      @JsonKey(name: 'sunrise') int sunrise,
+      @JsonKey(name: 'sunset') int sunset});
 }
 
 /// @nodoc
@@ -115,33 +115,33 @@ class __$$_SysCopyWithImpl<$Res> extends _$SysCopyWithImpl<$Res, _$_Sys>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? type = freezed,
-    Object? id = freezed,
-    Object? country = freezed,
-    Object? sunrise = freezed,
-    Object? sunset = freezed,
+    Object? type = null,
+    Object? id = null,
+    Object? country = null,
+    Object? sunrise = null,
+    Object? sunset = null,
   }) {
     return _then(_$_Sys(
-      type: freezed == type
+      type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
-              as int?,
-      id: freezed == id
+              as int,
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      country: freezed == country
+              as int,
+      country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      sunrise: freezed == sunrise
+              as String,
+      sunrise: null == sunrise
           ? _value.sunrise
           : sunrise // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sunset: freezed == sunset
+              as int,
+      sunset: null == sunset
           ? _value.sunset
           : sunset // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -150,29 +150,29 @@ class __$$_SysCopyWithImpl<$Res> extends _$SysCopyWithImpl<$Res, _$_Sys>
 @JsonSerializable()
 class _$_Sys implements _Sys {
   const _$_Sys(
-      {@JsonKey(name: 'type') this.type,
-      @JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'country') this.country,
-      @JsonKey(name: 'sunrise') this.sunrise,
-      @JsonKey(name: 'sunset') this.sunset});
+      {@JsonKey(name: 'type') this.type = 0,
+      @JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'country') this.country = '',
+      @JsonKey(name: 'sunrise') this.sunrise = 0,
+      @JsonKey(name: 'sunset') this.sunset = 0});
 
   factory _$_Sys.fromJson(Map<String, dynamic> json) => _$$_SysFromJson(json);
 
   @override
   @JsonKey(name: 'type')
-  final int? type;
+  final int type;
   @override
   @JsonKey(name: 'id')
-  final int? id;
+  final int id;
   @override
   @JsonKey(name: 'country')
-  final String? country;
+  final String country;
   @override
   @JsonKey(name: 'sunrise')
-  final int? sunrise;
+  final int sunrise;
   @override
   @JsonKey(name: 'sunset')
-  final int? sunset;
+  final int sunset;
 
   @override
   String toString() {
@@ -212,29 +212,29 @@ class _$_Sys implements _Sys {
 
 abstract class _Sys implements Sys {
   const factory _Sys(
-      {@JsonKey(name: 'type') final int? type,
-      @JsonKey(name: 'id') final int? id,
-      @JsonKey(name: 'country') final String? country,
-      @JsonKey(name: 'sunrise') final int? sunrise,
-      @JsonKey(name: 'sunset') final int? sunset}) = _$_Sys;
+      {@JsonKey(name: 'type') final int type,
+      @JsonKey(name: 'id') final int id,
+      @JsonKey(name: 'country') final String country,
+      @JsonKey(name: 'sunrise') final int sunrise,
+      @JsonKey(name: 'sunset') final int sunset}) = _$_Sys;
 
   factory _Sys.fromJson(Map<String, dynamic> json) = _$_Sys.fromJson;
 
   @override
   @JsonKey(name: 'type')
-  int? get type;
+  int get type;
   @override
   @JsonKey(name: 'id')
-  int? get id;
+  int get id;
   @override
   @JsonKey(name: 'country')
-  String? get country;
+  String get country;
   @override
   @JsonKey(name: 'sunrise')
-  int? get sunrise;
+  int get sunrise;
   @override
   @JsonKey(name: 'sunset')
-  int? get sunset;
+  int get sunset;
   @override
   @JsonKey(ignore: true)
   _$$_SysCopyWith<_$_Sys> get copyWith => throw _privateConstructorUsedError;

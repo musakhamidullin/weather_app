@@ -21,7 +21,7 @@ Rain _$RainFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Rain {
   @JsonKey(name: '3h')
-  double? get d3h => throw _privateConstructorUsedError;
+  double get d3h => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $RainCopyWith<$Res> {
   factory $RainCopyWith(Rain value, $Res Function(Rain) then) =
       _$RainCopyWithImpl<$Res, Rain>;
   @useResult
-  $Res call({@JsonKey(name: '3h') double? d3h});
+  $Res call({@JsonKey(name: '3h') double d3h});
 }
 
 /// @nodoc
@@ -49,13 +49,13 @@ class _$RainCopyWithImpl<$Res, $Val extends Rain>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? d3h = freezed,
+    Object? d3h = null,
   }) {
     return _then(_value.copyWith(
-      d3h: freezed == d3h
+      d3h: null == d3h
           ? _value.d3h
           : d3h // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -66,7 +66,7 @@ abstract class _$$_RainCopyWith<$Res> implements $RainCopyWith<$Res> {
       __$$_RainCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: '3h') double? d3h});
+  $Res call({@JsonKey(name: '3h') double d3h});
 }
 
 /// @nodoc
@@ -78,13 +78,13 @@ class __$$_RainCopyWithImpl<$Res> extends _$RainCopyWithImpl<$Res, _$_Rain>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? d3h = freezed,
+    Object? d3h = null,
   }) {
     return _then(_$_Rain(
-      d3h: freezed == d3h
+      d3h: null == d3h
           ? _value.d3h
           : d3h // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -92,13 +92,13 @@ class __$$_RainCopyWithImpl<$Res> extends _$RainCopyWithImpl<$Res, _$_Rain>
 /// @nodoc
 @JsonSerializable()
 class _$_Rain implements _Rain {
-  const _$_Rain({@JsonKey(name: '3h') this.d3h});
+  const _$_Rain({@JsonKey(name: '3h') this.d3h = 0.0});
 
   factory _$_Rain.fromJson(Map<String, dynamic> json) => _$$_RainFromJson(json);
 
   @override
   @JsonKey(name: '3h')
-  final double? d3h;
+  final double d3h;
 
   @override
   String toString() {
@@ -132,13 +132,13 @@ class _$_Rain implements _Rain {
 }
 
 abstract class _Rain implements Rain {
-  const factory _Rain({@JsonKey(name: '3h') final double? d3h}) = _$_Rain;
+  const factory _Rain({@JsonKey(name: '3h') final double d3h}) = _$_Rain;
 
   factory _Rain.fromJson(Map<String, dynamic> json) = _$_Rain.fromJson;
 
   @override
   @JsonKey(name: '3h')
-  double? get d3h;
+  double get d3h;
   @override
   @JsonKey(ignore: true)
   _$$_RainCopyWith<_$_Rain> get copyWith => throw _privateConstructorUsedError;

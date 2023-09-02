@@ -1,78 +1,40 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
+
+import 'firebase_options.dart';
+import 'screens/splash.dart';
+import 'screens/user_form.dart';
 import 'theme.dart';
 
 void main() async {
-  runApp(const MainApp());
+  runZonedGuarded(() async {
 
-  await Future.delayed(Duration(seconds: 5));
+    WidgetsFlutterBinding.ensureInitialized();
 
-  runApp(const MainApp1());
+    await _fbInit();
 
-}
+    runApp(const SplashScreen());
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+    await Geolocator.checkPermission();
+    await Geolocator.requestPermission();
 
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: Container(
-        color: Colors.red,
-      )
-    );
-  }
-}
+    await Future.delayed(const Duration(seconds: 2));
 
-
-
-class MainApp1 extends StatelessWidget {
-  const MainApp1({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: Container(
-        color: Colors.blue,
-      )
-    );
-  }
-}
-
-// class SplashScreen extends StatelessWidget {
-//   const SplashScreen({super.key});
-
-//   @override
-//   Widget build(BuildContext context) {
-//     return DecoratedBox(
-//       decoration: BoxDecoration(
-//         color: Colors.black
-//       ),
-//       child: CustomPaint(
-//         painter: ToPaint(),
-//       ),
-//     );
-//   }
-// }
-
-class ToPaint extends CustomPainter{
-  @override
-  void paint(Canvas canvas, Size size) {
-    final rect = Rect.fromLTWH(0, 0, size.width, size.height);
-    Paint paint = Paint()..color = Colors.pink;
-
-    paint.shader = const LinearGradient(colors: [
-      primary,
-      Colors.black,
-    ],
-    begin: Alignment(0, 0),
-    end: Alignment(0.35, 1),
-    stops: [0,1],
-    ).createShader(rect);
+    runApp(MaterialApp(theme: ThemeApp.get(), home: const UserFormScreen()));
     
-    canvas.drawRect(rect,paint);
-  }
+  }, (error, stack) {
+    debugPrint(stack.toString());
+  });
+}
 
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+Future<void> _fbInit() async {
+  final app = await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  FirebaseAuth.instanceFor(app: app);
 }

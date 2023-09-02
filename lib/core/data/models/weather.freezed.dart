@@ -21,13 +21,14 @@ Weather _$WeatherFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Weather {
   @JsonKey(name: 'id')
-  int? get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'main')
-  String? get main => throw _privateConstructorUsedError;
+  @MainConverter()
+  (String, String) get main => throw _privateConstructorUsedError;
   @JsonKey(name: 'description')
-  String? get description => throw _privateConstructorUsedError;
+  String get description => throw _privateConstructorUsedError;
   @JsonKey(name: 'icon')
-  String? get icon => throw _privateConstructorUsedError;
+  String get icon => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -40,10 +41,10 @@ abstract class $WeatherCopyWith<$Res> {
       _$WeatherCopyWithImpl<$Res, Weather>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'main') String? main,
-      @JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'icon') String? icon});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'main') @MainConverter() (String, String) main,
+      @JsonKey(name: 'description') String description,
+      @JsonKey(name: 'icon') String icon});
 }
 
 /// @nodoc
@@ -59,28 +60,28 @@ class _$WeatherCopyWithImpl<$Res, $Val extends Weather>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? main = freezed,
-    Object? description = freezed,
-    Object? icon = freezed,
+    Object? id = null,
+    Object? main = null,
+    Object? description = null,
+    Object? icon = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      main: freezed == main
+              as int,
+      main: null == main
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
+              as (String, String),
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icon: freezed == icon
+              as String,
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ) as $Val);
   }
 }
@@ -93,10 +94,10 @@ abstract class _$$_WeatherCopyWith<$Res> implements $WeatherCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'main') String? main,
-      @JsonKey(name: 'description') String? description,
-      @JsonKey(name: 'icon') String? icon});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'main') @MainConverter() (String, String) main,
+      @JsonKey(name: 'description') String description,
+      @JsonKey(name: 'icon') String icon});
 }
 
 /// @nodoc
@@ -109,28 +110,28 @@ class __$$_WeatherCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? main = freezed,
-    Object? description = freezed,
-    Object? icon = freezed,
+    Object? id = null,
+    Object? main = null,
+    Object? description = null,
+    Object? icon = null,
   }) {
     return _then(_$_Weather(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      main: freezed == main
+              as int,
+      main: null == main
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
-              as String?,
-      description: freezed == description
+              as (String, String),
+      description: null == description
           ? _value.description
           : description // ignore: cast_nullable_to_non_nullable
-              as String?,
-      icon: freezed == icon
+              as String,
+      icon: null == icon
           ? _value.icon
           : icon // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as String,
     ));
   }
 }
@@ -139,26 +140,27 @@ class __$$_WeatherCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_Weather implements _Weather {
   const _$_Weather(
-      {@JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'main') this.main,
-      @JsonKey(name: 'description') this.description,
-      @JsonKey(name: 'icon') this.icon});
+      {@JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'main') @MainConverter() this.main = const ('', ''),
+      @JsonKey(name: 'description') this.description = '',
+      @JsonKey(name: 'icon') this.icon = ''});
 
   factory _$_Weather.fromJson(Map<String, dynamic> json) =>
       _$$_WeatherFromJson(json);
 
   @override
   @JsonKey(name: 'id')
-  final int? id;
+  final int id;
   @override
   @JsonKey(name: 'main')
-  final String? main;
+  @MainConverter()
+  final (String, String) main;
   @override
   @JsonKey(name: 'description')
-  final String? description;
+  final String description;
   @override
   @JsonKey(name: 'icon')
-  final String? icon;
+  final String icon;
 
   @override
   String toString() {
@@ -197,25 +199,26 @@ class _$_Weather implements _Weather {
 
 abstract class _Weather implements Weather {
   const factory _Weather(
-      {@JsonKey(name: 'id') final int? id,
-      @JsonKey(name: 'main') final String? main,
-      @JsonKey(name: 'description') final String? description,
-      @JsonKey(name: 'icon') final String? icon}) = _$_Weather;
+      {@JsonKey(name: 'id') final int id,
+      @JsonKey(name: 'main') @MainConverter() final (String, String) main,
+      @JsonKey(name: 'description') final String description,
+      @JsonKey(name: 'icon') final String icon}) = _$_Weather;
 
   factory _Weather.fromJson(Map<String, dynamic> json) = _$_Weather.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  int? get id;
+  int get id;
   @override
   @JsonKey(name: 'main')
-  String? get main;
+  @MainConverter()
+  (String, String) get main;
   @override
   @JsonKey(name: 'description')
-  String? get description;
+  String get description;
   @override
   @JsonKey(name: 'icon')
-  String? get icon;
+  String get icon;
   @override
   @JsonKey(ignore: true)
   _$$_WeatherCopyWith<_$_Weather> get copyWith =>

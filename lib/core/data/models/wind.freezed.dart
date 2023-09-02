@@ -21,11 +21,12 @@ Wind _$WindFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Wind {
   @JsonKey(name: 'speed')
-  double? get speed => throw _privateConstructorUsedError;
+  double get speed => throw _privateConstructorUsedError;
   @JsonKey(name: 'deg')
-  double? get deg => throw _privateConstructorUsedError;
+  @DegConverter()
+  String get windDirection => throw _privateConstructorUsedError;
   @JsonKey(name: 'gust')
-  double? get gust => throw _privateConstructorUsedError;
+  double get gust => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -38,9 +39,9 @@ abstract class $WindCopyWith<$Res> {
       _$WindCopyWithImpl<$Res, Wind>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'speed') double? speed,
-      @JsonKey(name: 'deg') double? deg,
-      @JsonKey(name: 'gust') double? gust});
+      {@JsonKey(name: 'speed') double speed,
+      @JsonKey(name: 'deg') @DegConverter() String windDirection,
+      @JsonKey(name: 'gust') double gust});
 }
 
 /// @nodoc
@@ -56,23 +57,23 @@ class _$WindCopyWithImpl<$Res, $Val extends Wind>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? speed = freezed,
-    Object? deg = freezed,
-    Object? gust = freezed,
+    Object? speed = null,
+    Object? windDirection = null,
+    Object? gust = null,
   }) {
     return _then(_value.copyWith(
-      speed: freezed == speed
+      speed: null == speed
           ? _value.speed
           : speed // ignore: cast_nullable_to_non_nullable
-              as double?,
-      deg: freezed == deg
-          ? _value.deg
-          : deg // ignore: cast_nullable_to_non_nullable
-              as double?,
-      gust: freezed == gust
+              as double,
+      windDirection: null == windDirection
+          ? _value.windDirection
+          : windDirection // ignore: cast_nullable_to_non_nullable
+              as String,
+      gust: null == gust
           ? _value.gust
           : gust // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ) as $Val);
   }
 }
@@ -84,9 +85,9 @@ abstract class _$$_WindCopyWith<$Res> implements $WindCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'speed') double? speed,
-      @JsonKey(name: 'deg') double? deg,
-      @JsonKey(name: 'gust') double? gust});
+      {@JsonKey(name: 'speed') double speed,
+      @JsonKey(name: 'deg') @DegConverter() String windDirection,
+      @JsonKey(name: 'gust') double gust});
 }
 
 /// @nodoc
@@ -98,23 +99,23 @@ class __$$_WindCopyWithImpl<$Res> extends _$WindCopyWithImpl<$Res, _$_Wind>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? speed = freezed,
-    Object? deg = freezed,
-    Object? gust = freezed,
+    Object? speed = null,
+    Object? windDirection = null,
+    Object? gust = null,
   }) {
     return _then(_$_Wind(
-      speed: freezed == speed
+      speed: null == speed
           ? _value.speed
           : speed // ignore: cast_nullable_to_non_nullable
-              as double?,
-      deg: freezed == deg
-          ? _value.deg
-          : deg // ignore: cast_nullable_to_non_nullable
-              as double?,
-      gust: freezed == gust
+              as double,
+      windDirection: null == windDirection
+          ? _value.windDirection
+          : windDirection // ignore: cast_nullable_to_non_nullable
+              as String,
+      gust: null == gust
           ? _value.gust
           : gust // ignore: cast_nullable_to_non_nullable
-              as double?,
+              as double,
     ));
   }
 }
@@ -123,25 +124,26 @@ class __$$_WindCopyWithImpl<$Res> extends _$WindCopyWithImpl<$Res, _$_Wind>
 @JsonSerializable()
 class _$_Wind implements _Wind {
   const _$_Wind(
-      {@JsonKey(name: 'speed') this.speed,
-      @JsonKey(name: 'deg') this.deg,
-      @JsonKey(name: 'gust') this.gust});
+      {@JsonKey(name: 'speed') this.speed = 0.0,
+      @JsonKey(name: 'deg') @DegConverter() this.windDirection = '',
+      @JsonKey(name: 'gust') this.gust = 0.0});
 
   factory _$_Wind.fromJson(Map<String, dynamic> json) => _$$_WindFromJson(json);
 
   @override
   @JsonKey(name: 'speed')
-  final double? speed;
+  final double speed;
   @override
   @JsonKey(name: 'deg')
-  final double? deg;
+  @DegConverter()
+  final String windDirection;
   @override
   @JsonKey(name: 'gust')
-  final double? gust;
+  final double gust;
 
   @override
   String toString() {
-    return 'Wind(speed: $speed, deg: $deg, gust: $gust)';
+    return 'Wind(speed: $speed, windDirection: $windDirection, gust: $gust)';
   }
 
   @override
@@ -150,13 +152,14 @@ class _$_Wind implements _Wind {
         (other.runtimeType == runtimeType &&
             other is _$_Wind &&
             (identical(other.speed, speed) || other.speed == speed) &&
-            (identical(other.deg, deg) || other.deg == deg) &&
+            (identical(other.windDirection, windDirection) ||
+                other.windDirection == windDirection) &&
             (identical(other.gust, gust) || other.gust == gust));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, speed, deg, gust);
+  int get hashCode => Object.hash(runtimeType, speed, windDirection, gust);
 
   @JsonKey(ignore: true)
   @override
@@ -174,21 +177,22 @@ class _$_Wind implements _Wind {
 
 abstract class _Wind implements Wind {
   const factory _Wind(
-      {@JsonKey(name: 'speed') final double? speed,
-      @JsonKey(name: 'deg') final double? deg,
-      @JsonKey(name: 'gust') final double? gust}) = _$_Wind;
+      {@JsonKey(name: 'speed') final double speed,
+      @JsonKey(name: 'deg') @DegConverter() final String windDirection,
+      @JsonKey(name: 'gust') final double gust}) = _$_Wind;
 
   factory _Wind.fromJson(Map<String, dynamic> json) = _$_Wind.fromJson;
 
   @override
   @JsonKey(name: 'speed')
-  double? get speed;
+  double get speed;
   @override
   @JsonKey(name: 'deg')
-  double? get deg;
+  @DegConverter()
+  String get windDirection;
   @override
   @JsonKey(name: 'gust')
-  double? get gust;
+  double get gust;
   @override
   @JsonKey(ignore: true)
   _$$_WindCopyWith<_$_Wind> get copyWith => throw _privateConstructorUsedError;

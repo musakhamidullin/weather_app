@@ -21,7 +21,7 @@ Clouds _$CloudsFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$Clouds {
   @JsonKey(name: 'clouds')
-  int? get all => throw _privateConstructorUsedError;
+  int get all => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -33,7 +33,7 @@ abstract class $CloudsCopyWith<$Res> {
   factory $CloudsCopyWith(Clouds value, $Res Function(Clouds) then) =
       _$CloudsCopyWithImpl<$Res, Clouds>;
   @useResult
-  $Res call({@JsonKey(name: 'clouds') int? all});
+  $Res call({@JsonKey(name: 'clouds') int all});
 }
 
 /// @nodoc
@@ -49,13 +49,13 @@ class _$CloudsCopyWithImpl<$Res, $Val extends Clouds>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? all = freezed,
+    Object? all = null,
   }) {
     return _then(_value.copyWith(
-      all: freezed == all
+      all: null == all
           ? _value.all
           : all // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 }
@@ -66,7 +66,7 @@ abstract class _$$_CloudsCopyWith<$Res> implements $CloudsCopyWith<$Res> {
       __$$_CloudsCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({@JsonKey(name: 'clouds') int? all});
+  $Res call({@JsonKey(name: 'clouds') int all});
 }
 
 /// @nodoc
@@ -79,13 +79,13 @@ class __$$_CloudsCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? all = freezed,
+    Object? all = null,
   }) {
     return _then(_$_Clouds(
-      all: freezed == all
+      all: null == all
           ? _value.all
           : all // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -93,14 +93,14 @@ class __$$_CloudsCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_Clouds implements _Clouds {
-  const _$_Clouds({@JsonKey(name: 'clouds') this.all});
+  const _$_Clouds({@JsonKey(name: 'clouds') this.all = 0});
 
   factory _$_Clouds.fromJson(Map<String, dynamic> json) =>
       _$$_CloudsFromJson(json);
 
   @override
   @JsonKey(name: 'clouds')
-  final int? all;
+  final int all;
 
   @override
   String toString() {
@@ -134,13 +134,13 @@ class _$_Clouds implements _Clouds {
 }
 
 abstract class _Clouds implements Clouds {
-  const factory _Clouds({@JsonKey(name: 'clouds') final int? all}) = _$_Clouds;
+  const factory _Clouds({@JsonKey(name: 'clouds') final int all}) = _$_Clouds;
 
   factory _Clouds.fromJson(Map<String, dynamic> json) = _$_Clouds.fromJson;
 
   @override
   @JsonKey(name: 'clouds')
-  int? get all;
+  int get all;
   @override
   @JsonKey(ignore: true)
   _$$_CloudsCopyWith<_$_Clouds> get copyWith =>

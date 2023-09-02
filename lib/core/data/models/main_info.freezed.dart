@@ -20,22 +20,19 @@ MainInfo _$MainInfoFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$MainInfo {
-  @JsonKey(name: 'temp')
-  double? get temp => throw _privateConstructorUsedError;
-  @JsonKey(name: 'feels_like')
-  double? get feelsLike => throw _privateConstructorUsedError;
-  @JsonKey(name: 'temp_min')
-  double? get tempMin => throw _privateConstructorUsedError;
-  @JsonKey(name: 'temp_max')
-  double? get tempMax => throw _privateConstructorUsedError;
-  @JsonKey(name: 'pressure')
-  int? get pressure => throw _privateConstructorUsedError;
-  @JsonKey(name: 'humidity')
-  int? get humidity => throw _privateConstructorUsedError;
-  @JsonKey(name: 'sea_level')
-  int? get seaLevel => throw _privateConstructorUsedError;
-  @JsonKey(name: 'grnd_level')
-  int? get grndLevel => throw _privateConstructorUsedError;
+  @JsonKey(name: "temp")
+  double get temp => throw _privateConstructorUsedError;
+  @JsonKey(name: "feels_like")
+  double get feelsLike => throw _privateConstructorUsedError;
+  @JsonKey(name: "temp_min")
+  double get tempMin => throw _privateConstructorUsedError;
+  @JsonKey(name: "temp_max")
+  double get tempMax => throw _privateConstructorUsedError;
+  @JsonKey(name: "pressure")
+  int get pressure => throw _privateConstructorUsedError;
+  @JsonKey(name: "humidity")
+  @HumidityConverter()
+  (int, String) get humidity => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -49,14 +46,12 @@ abstract class $MainInfoCopyWith<$Res> {
       _$MainInfoCopyWithImpl<$Res, MainInfo>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'temp') double? temp,
-      @JsonKey(name: 'feels_like') double? feelsLike,
-      @JsonKey(name: 'temp_min') double? tempMin,
-      @JsonKey(name: 'temp_max') double? tempMax,
-      @JsonKey(name: 'pressure') int? pressure,
-      @JsonKey(name: 'humidity') int? humidity,
-      @JsonKey(name: 'sea_level') int? seaLevel,
-      @JsonKey(name: 'grnd_level') int? grndLevel});
+      {@JsonKey(name: "temp") double temp,
+      @JsonKey(name: "feels_like") double feelsLike,
+      @JsonKey(name: "temp_min") double tempMin,
+      @JsonKey(name: "temp_max") double tempMax,
+      @JsonKey(name: "pressure") int pressure,
+      @JsonKey(name: "humidity") @HumidityConverter() (int, String) humidity});
 }
 
 /// @nodoc
@@ -72,48 +67,38 @@ class _$MainInfoCopyWithImpl<$Res, $Val extends MainInfo>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? temp = freezed,
-    Object? feelsLike = freezed,
-    Object? tempMin = freezed,
-    Object? tempMax = freezed,
-    Object? pressure = freezed,
-    Object? humidity = freezed,
-    Object? seaLevel = freezed,
-    Object? grndLevel = freezed,
+    Object? temp = null,
+    Object? feelsLike = null,
+    Object? tempMin = null,
+    Object? tempMax = null,
+    Object? pressure = null,
+    Object? humidity = null,
   }) {
     return _then(_value.copyWith(
-      temp: freezed == temp
+      temp: null == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
-              as double?,
-      feelsLike: freezed == feelsLike
+              as double,
+      feelsLike: null == feelsLike
           ? _value.feelsLike
           : feelsLike // ignore: cast_nullable_to_non_nullable
-              as double?,
-      tempMin: freezed == tempMin
+              as double,
+      tempMin: null == tempMin
           ? _value.tempMin
           : tempMin // ignore: cast_nullable_to_non_nullable
-              as double?,
-      tempMax: freezed == tempMax
+              as double,
+      tempMax: null == tempMax
           ? _value.tempMax
           : tempMax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      pressure: freezed == pressure
+              as double,
+      pressure: null == pressure
           ? _value.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
-              as int?,
-      humidity: freezed == humidity
+              as int,
+      humidity: null == humidity
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      seaLevel: freezed == seaLevel
-          ? _value.seaLevel
-          : seaLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      grndLevel: freezed == grndLevel
-          ? _value.grndLevel
-          : grndLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as (int, String),
     ) as $Val);
   }
 }
@@ -126,14 +111,12 @@ abstract class _$$_MainInfoCopyWith<$Res> implements $MainInfoCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'temp') double? temp,
-      @JsonKey(name: 'feels_like') double? feelsLike,
-      @JsonKey(name: 'temp_min') double? tempMin,
-      @JsonKey(name: 'temp_max') double? tempMax,
-      @JsonKey(name: 'pressure') int? pressure,
-      @JsonKey(name: 'humidity') int? humidity,
-      @JsonKey(name: 'sea_level') int? seaLevel,
-      @JsonKey(name: 'grnd_level') int? grndLevel});
+      {@JsonKey(name: "temp") double temp,
+      @JsonKey(name: "feels_like") double feelsLike,
+      @JsonKey(name: "temp_min") double tempMin,
+      @JsonKey(name: "temp_max") double tempMax,
+      @JsonKey(name: "pressure") int pressure,
+      @JsonKey(name: "humidity") @HumidityConverter() (int, String) humidity});
 }
 
 /// @nodoc
@@ -147,48 +130,38 @@ class __$$_MainInfoCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? temp = freezed,
-    Object? feelsLike = freezed,
-    Object? tempMin = freezed,
-    Object? tempMax = freezed,
-    Object? pressure = freezed,
-    Object? humidity = freezed,
-    Object? seaLevel = freezed,
-    Object? grndLevel = freezed,
+    Object? temp = null,
+    Object? feelsLike = null,
+    Object? tempMin = null,
+    Object? tempMax = null,
+    Object? pressure = null,
+    Object? humidity = null,
   }) {
     return _then(_$_MainInfo(
-      temp: freezed == temp
+      temp: null == temp
           ? _value.temp
           : temp // ignore: cast_nullable_to_non_nullable
-              as double?,
-      feelsLike: freezed == feelsLike
+              as double,
+      feelsLike: null == feelsLike
           ? _value.feelsLike
           : feelsLike // ignore: cast_nullable_to_non_nullable
-              as double?,
-      tempMin: freezed == tempMin
+              as double,
+      tempMin: null == tempMin
           ? _value.tempMin
           : tempMin // ignore: cast_nullable_to_non_nullable
-              as double?,
-      tempMax: freezed == tempMax
+              as double,
+      tempMax: null == tempMax
           ? _value.tempMax
           : tempMax // ignore: cast_nullable_to_non_nullable
-              as double?,
-      pressure: freezed == pressure
+              as double,
+      pressure: null == pressure
           ? _value.pressure
           : pressure // ignore: cast_nullable_to_non_nullable
-              as int?,
-      humidity: freezed == humidity
+              as int,
+      humidity: null == humidity
           ? _value.humidity
           : humidity // ignore: cast_nullable_to_non_nullable
-              as int?,
-      seaLevel: freezed == seaLevel
-          ? _value.seaLevel
-          : seaLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
-      grndLevel: freezed == grndLevel
-          ? _value.grndLevel
-          : grndLevel // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as (int, String),
     ));
   }
 }
@@ -197,46 +170,41 @@ class __$$_MainInfoCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_MainInfo implements _MainInfo {
   const _$_MainInfo(
-      {@JsonKey(name: 'temp') this.temp,
-      @JsonKey(name: 'feels_like') this.feelsLike,
-      @JsonKey(name: 'temp_min') this.tempMin,
-      @JsonKey(name: 'temp_max') this.tempMax,
-      @JsonKey(name: 'pressure') this.pressure,
-      @JsonKey(name: 'humidity') this.humidity,
-      @JsonKey(name: 'sea_level') this.seaLevel,
-      @JsonKey(name: 'grnd_level') this.grndLevel});
+      {@JsonKey(name: "temp") this.temp = 0.0,
+      @JsonKey(name: "feels_like") this.feelsLike = 0.0,
+      @JsonKey(name: "temp_min") this.tempMin = 0.0,
+      @JsonKey(name: "temp_max") this.tempMax = 0.0,
+      @JsonKey(name: "pressure") this.pressure = 0,
+      @JsonKey(name: "humidity")
+      @HumidityConverter()
+      this.humidity = const (0, '')});
 
   factory _$_MainInfo.fromJson(Map<String, dynamic> json) =>
       _$$_MainInfoFromJson(json);
 
   @override
-  @JsonKey(name: 'temp')
-  final double? temp;
+  @JsonKey(name: "temp")
+  final double temp;
   @override
-  @JsonKey(name: 'feels_like')
-  final double? feelsLike;
+  @JsonKey(name: "feels_like")
+  final double feelsLike;
   @override
-  @JsonKey(name: 'temp_min')
-  final double? tempMin;
+  @JsonKey(name: "temp_min")
+  final double tempMin;
   @override
-  @JsonKey(name: 'temp_max')
-  final double? tempMax;
+  @JsonKey(name: "temp_max")
+  final double tempMax;
   @override
-  @JsonKey(name: 'pressure')
-  final int? pressure;
+  @JsonKey(name: "pressure")
+  final int pressure;
   @override
-  @JsonKey(name: 'humidity')
-  final int? humidity;
-  @override
-  @JsonKey(name: 'sea_level')
-  final int? seaLevel;
-  @override
-  @JsonKey(name: 'grnd_level')
-  final int? grndLevel;
+  @JsonKey(name: "humidity")
+  @HumidityConverter()
+  final (int, String) humidity;
 
   @override
   String toString() {
-    return 'MainInfo(temp: $temp, feelsLike: $feelsLike, tempMin: $tempMin, tempMax: $tempMax, pressure: $pressure, humidity: $humidity, seaLevel: $seaLevel, grndLevel: $grndLevel)';
+    return 'MainInfo(temp: $temp, feelsLike: $feelsLike, tempMin: $tempMin, tempMax: $tempMax, pressure: $pressure, humidity: $humidity)';
   }
 
   @override
@@ -252,17 +220,13 @@ class _$_MainInfo implements _MainInfo {
             (identical(other.pressure, pressure) ||
                 other.pressure == pressure) &&
             (identical(other.humidity, humidity) ||
-                other.humidity == humidity) &&
-            (identical(other.seaLevel, seaLevel) ||
-                other.seaLevel == seaLevel) &&
-            (identical(other.grndLevel, grndLevel) ||
-                other.grndLevel == grndLevel));
+                other.humidity == humidity));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, temp, feelsLike, tempMin,
-      tempMax, pressure, humidity, seaLevel, grndLevel);
+  int get hashCode => Object.hash(
+      runtimeType, temp, feelsLike, tempMin, tempMax, pressure, humidity);
 
   @JsonKey(ignore: true)
   @override
@@ -280,41 +244,36 @@ class _$_MainInfo implements _MainInfo {
 
 abstract class _MainInfo implements MainInfo {
   const factory _MainInfo(
-      {@JsonKey(name: 'temp') final double? temp,
-      @JsonKey(name: 'feels_like') final double? feelsLike,
-      @JsonKey(name: 'temp_min') final double? tempMin,
-      @JsonKey(name: 'temp_max') final double? tempMax,
-      @JsonKey(name: 'pressure') final int? pressure,
-      @JsonKey(name: 'humidity') final int? humidity,
-      @JsonKey(name: 'sea_level') final int? seaLevel,
-      @JsonKey(name: 'grnd_level') final int? grndLevel}) = _$_MainInfo;
+      {@JsonKey(name: "temp") final double temp,
+      @JsonKey(name: "feels_like") final double feelsLike,
+      @JsonKey(name: "temp_min") final double tempMin,
+      @JsonKey(name: "temp_max") final double tempMax,
+      @JsonKey(name: "pressure") final int pressure,
+      @JsonKey(name: "humidity")
+      @HumidityConverter()
+      final (int, String) humidity}) = _$_MainInfo;
 
   factory _MainInfo.fromJson(Map<String, dynamic> json) = _$_MainInfo.fromJson;
 
   @override
-  @JsonKey(name: 'temp')
-  double? get temp;
+  @JsonKey(name: "temp")
+  double get temp;
   @override
-  @JsonKey(name: 'feels_like')
-  double? get feelsLike;
+  @JsonKey(name: "feels_like")
+  double get feelsLike;
   @override
-  @JsonKey(name: 'temp_min')
-  double? get tempMin;
+  @JsonKey(name: "temp_min")
+  double get tempMin;
   @override
-  @JsonKey(name: 'temp_max')
-  double? get tempMax;
+  @JsonKey(name: "temp_max")
+  double get tempMax;
   @override
-  @JsonKey(name: 'pressure')
-  int? get pressure;
+  @JsonKey(name: "pressure")
+  int get pressure;
   @override
-  @JsonKey(name: 'humidity')
-  int? get humidity;
-  @override
-  @JsonKey(name: 'sea_level')
-  int? get seaLevel;
-  @override
-  @JsonKey(name: 'grnd_level')
-  int? get grndLevel;
+  @JsonKey(name: "humidity")
+  @HumidityConverter()
+  (int, String) get humidity;
   @override
   @JsonKey(ignore: true)
   _$$_MainInfoCopyWith<_$_MainInfo> get copyWith =>

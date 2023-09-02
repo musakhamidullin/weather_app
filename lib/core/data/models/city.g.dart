@@ -7,16 +7,16 @@ part of 'city.dart';
 // **************************************************************************
 
 _$_City _$$_CityFromJson(Map<String, dynamic> json) => _$_City(
-      id: json['id'] as int?,
-      name: json['name'] as String?,
+      id: json['id'] as int? ?? 0,
+      name: json['name'] as String? ?? '',
       coord: json['coord'] == null
-          ? null
+          ? City.defCoord
           : Coord.fromJson(json['coord'] as Map<String, dynamic>),
-      country: json['country'] as String?,
-      population: json['population'] as int?,
-      timezone: json['timezone'] as int?,
-      sunrise: json['sunrise'] as int?,
-      sunset: json['sunset'] as int?,
+      country: json['country'] as String? ?? '',
+      population: json['population'] as int? ?? 0,
+      timezone: json['timezone'] as int? ?? 0,
+      sunrise: json['sunrise'] as int? ?? 0,
+      sunset: json['sunset'] as int? ?? 0,
     );
 
 Map<String, dynamic> _$$_CityToJson(_$_City instance) => <String, dynamic>{

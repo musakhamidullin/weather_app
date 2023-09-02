@@ -21,21 +21,21 @@ City _$CityFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$City {
   @JsonKey(name: 'id')
-  int? get id => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   @JsonKey(name: 'name')
-  String? get name => throw _privateConstructorUsedError;
+  String get name => throw _privateConstructorUsedError;
   @JsonKey(name: 'coord')
-  Coord? get coord => throw _privateConstructorUsedError;
+  Coord get coord => throw _privateConstructorUsedError;
   @JsonKey(name: 'country')
-  String? get country => throw _privateConstructorUsedError;
+  String get country => throw _privateConstructorUsedError;
   @JsonKey(name: 'population')
-  int? get population => throw _privateConstructorUsedError;
+  int get population => throw _privateConstructorUsedError;
   @JsonKey(name: 'timezone')
-  int? get timezone => throw _privateConstructorUsedError;
+  int get timezone => throw _privateConstructorUsedError;
   @JsonKey(name: 'sunrise')
-  int? get sunrise => throw _privateConstructorUsedError;
+  int get sunrise => throw _privateConstructorUsedError;
   @JsonKey(name: 'sunset')
-  int? get sunset => throw _privateConstructorUsedError;
+  int get sunset => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -48,16 +48,16 @@ abstract class $CityCopyWith<$Res> {
       _$CityCopyWithImpl<$Res, City>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'coord') Coord? coord,
-      @JsonKey(name: 'country') String? country,
-      @JsonKey(name: 'population') int? population,
-      @JsonKey(name: 'timezone') int? timezone,
-      @JsonKey(name: 'sunrise') int? sunrise,
-      @JsonKey(name: 'sunset') int? sunset});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'coord') Coord coord,
+      @JsonKey(name: 'country') String country,
+      @JsonKey(name: 'population') int population,
+      @JsonKey(name: 'timezone') int timezone,
+      @JsonKey(name: 'sunrise') int sunrise,
+      @JsonKey(name: 'sunset') int sunset});
 
-  $CoordCopyWith<$Res>? get coord;
+  $CoordCopyWith<$Res> get coord;
 }
 
 /// @nodoc
@@ -73,59 +73,55 @@ class _$CityCopyWithImpl<$Res, $Val extends City>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? coord = freezed,
-    Object? country = freezed,
-    Object? population = freezed,
-    Object? timezone = freezed,
-    Object? sunrise = freezed,
-    Object? sunset = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? coord = null,
+    Object? country = null,
+    Object? population = null,
+    Object? timezone = null,
+    Object? sunrise = null,
+    Object? sunset = null,
   }) {
     return _then(_value.copyWith(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      coord: freezed == coord
+              as String,
+      coord: null == coord
           ? _value.coord
           : coord // ignore: cast_nullable_to_non_nullable
-              as Coord?,
-      country: freezed == country
+              as Coord,
+      country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      population: freezed == population
+              as String,
+      population: null == population
           ? _value.population
           : population // ignore: cast_nullable_to_non_nullable
-              as int?,
-      timezone: freezed == timezone
+              as int,
+      timezone: null == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sunrise: freezed == sunrise
+              as int,
+      sunrise: null == sunrise
           ? _value.sunrise
           : sunrise // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sunset: freezed == sunset
+              as int,
+      sunset: null == sunset
           ? _value.sunset
           : sunset // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CoordCopyWith<$Res>? get coord {
-    if (_value.coord == null) {
-      return null;
-    }
-
-    return $CoordCopyWith<$Res>(_value.coord!, (value) {
+  $CoordCopyWith<$Res> get coord {
+    return $CoordCopyWith<$Res>(_value.coord, (value) {
       return _then(_value.copyWith(coord: value) as $Val);
     });
   }
@@ -138,17 +134,17 @@ abstract class _$$_CityCopyWith<$Res> implements $CityCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'id') int? id,
-      @JsonKey(name: 'name') String? name,
-      @JsonKey(name: 'coord') Coord? coord,
-      @JsonKey(name: 'country') String? country,
-      @JsonKey(name: 'population') int? population,
-      @JsonKey(name: 'timezone') int? timezone,
-      @JsonKey(name: 'sunrise') int? sunrise,
-      @JsonKey(name: 'sunset') int? sunset});
+      {@JsonKey(name: 'id') int id,
+      @JsonKey(name: 'name') String name,
+      @JsonKey(name: 'coord') Coord coord,
+      @JsonKey(name: 'country') String country,
+      @JsonKey(name: 'population') int population,
+      @JsonKey(name: 'timezone') int timezone,
+      @JsonKey(name: 'sunrise') int sunrise,
+      @JsonKey(name: 'sunset') int sunset});
 
   @override
-  $CoordCopyWith<$Res>? get coord;
+  $CoordCopyWith<$Res> get coord;
 }
 
 /// @nodoc
@@ -160,48 +156,48 @@ class __$$_CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$_City>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? id = freezed,
-    Object? name = freezed,
-    Object? coord = freezed,
-    Object? country = freezed,
-    Object? population = freezed,
-    Object? timezone = freezed,
-    Object? sunrise = freezed,
-    Object? sunset = freezed,
+    Object? id = null,
+    Object? name = null,
+    Object? coord = null,
+    Object? country = null,
+    Object? population = null,
+    Object? timezone = null,
+    Object? sunrise = null,
+    Object? sunset = null,
   }) {
     return _then(_$_City(
-      id: freezed == id
+      id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as int?,
-      name: freezed == name
+              as int,
+      name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
-              as String?,
-      coord: freezed == coord
+              as String,
+      coord: null == coord
           ? _value.coord
           : coord // ignore: cast_nullable_to_non_nullable
-              as Coord?,
-      country: freezed == country
+              as Coord,
+      country: null == country
           ? _value.country
           : country // ignore: cast_nullable_to_non_nullable
-              as String?,
-      population: freezed == population
+              as String,
+      population: null == population
           ? _value.population
           : population // ignore: cast_nullable_to_non_nullable
-              as int?,
-      timezone: freezed == timezone
+              as int,
+      timezone: null == timezone
           ? _value.timezone
           : timezone // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sunrise: freezed == sunrise
+              as int,
+      sunrise: null == sunrise
           ? _value.sunrise
           : sunrise // ignore: cast_nullable_to_non_nullable
-              as int?,
-      sunset: freezed == sunset
+              as int,
+      sunset: null == sunset
           ? _value.sunset
           : sunset // ignore: cast_nullable_to_non_nullable
-              as int?,
+              as int,
     ));
   }
 }
@@ -210,41 +206,41 @@ class __$$_CityCopyWithImpl<$Res> extends _$CityCopyWithImpl<$Res, _$_City>
 @JsonSerializable()
 class _$_City implements _City {
   const _$_City(
-      {@JsonKey(name: 'id') this.id,
-      @JsonKey(name: 'name') this.name,
-      @JsonKey(name: 'coord') this.coord,
-      @JsonKey(name: 'country') this.country,
-      @JsonKey(name: 'population') this.population,
-      @JsonKey(name: 'timezone') this.timezone,
-      @JsonKey(name: 'sunrise') this.sunrise,
-      @JsonKey(name: 'sunset') this.sunset});
+      {@JsonKey(name: 'id') this.id = 0,
+      @JsonKey(name: 'name') this.name = '',
+      @JsonKey(name: 'coord') this.coord = City.defCoord,
+      @JsonKey(name: 'country') this.country = '',
+      @JsonKey(name: 'population') this.population = 0,
+      @JsonKey(name: 'timezone') this.timezone = 0,
+      @JsonKey(name: 'sunrise') this.sunrise = 0,
+      @JsonKey(name: 'sunset') this.sunset = 0});
 
   factory _$_City.fromJson(Map<String, dynamic> json) => _$$_CityFromJson(json);
 
   @override
   @JsonKey(name: 'id')
-  final int? id;
+  final int id;
   @override
   @JsonKey(name: 'name')
-  final String? name;
+  final String name;
   @override
   @JsonKey(name: 'coord')
-  final Coord? coord;
+  final Coord coord;
   @override
   @JsonKey(name: 'country')
-  final String? country;
+  final String country;
   @override
   @JsonKey(name: 'population')
-  final int? population;
+  final int population;
   @override
   @JsonKey(name: 'timezone')
-  final int? timezone;
+  final int timezone;
   @override
   @JsonKey(name: 'sunrise')
-  final int? sunrise;
+  final int sunrise;
   @override
   @JsonKey(name: 'sunset')
-  final int? sunset;
+  final int sunset;
 
   @override
   String toString() {
@@ -289,41 +285,41 @@ class _$_City implements _City {
 
 abstract class _City implements City {
   const factory _City(
-      {@JsonKey(name: 'id') final int? id,
-      @JsonKey(name: 'name') final String? name,
-      @JsonKey(name: 'coord') final Coord? coord,
-      @JsonKey(name: 'country') final String? country,
-      @JsonKey(name: 'population') final int? population,
-      @JsonKey(name: 'timezone') final int? timezone,
-      @JsonKey(name: 'sunrise') final int? sunrise,
-      @JsonKey(name: 'sunset') final int? sunset}) = _$_City;
+      {@JsonKey(name: 'id') final int id,
+      @JsonKey(name: 'name') final String name,
+      @JsonKey(name: 'coord') final Coord coord,
+      @JsonKey(name: 'country') final String country,
+      @JsonKey(name: 'population') final int population,
+      @JsonKey(name: 'timezone') final int timezone,
+      @JsonKey(name: 'sunrise') final int sunrise,
+      @JsonKey(name: 'sunset') final int sunset}) = _$_City;
 
   factory _City.fromJson(Map<String, dynamic> json) = _$_City.fromJson;
 
   @override
   @JsonKey(name: 'id')
-  int? get id;
+  int get id;
   @override
   @JsonKey(name: 'name')
-  String? get name;
+  String get name;
   @override
   @JsonKey(name: 'coord')
-  Coord? get coord;
+  Coord get coord;
   @override
   @JsonKey(name: 'country')
-  String? get country;
+  String get country;
   @override
   @JsonKey(name: 'population')
-  int? get population;
+  int get population;
   @override
   @JsonKey(name: 'timezone')
-  int? get timezone;
+  int get timezone;
   @override
   @JsonKey(name: 'sunrise')
-  int? get sunrise;
+  int get sunrise;
   @override
   @JsonKey(name: 'sunset')
-  int? get sunset;
+  int get sunset;
   @override
   @JsonKey(ignore: true)
   _$$_CityCopyWith<_$_City> get copyWith => throw _privateConstructorUsedError;

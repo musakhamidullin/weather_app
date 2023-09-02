@@ -21,25 +21,25 @@ ForecastList _$ForecastListFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ForecastList {
   @JsonKey(name: 'dt')
-  int? get dt => throw _privateConstructorUsedError;
+  int get dt => throw _privateConstructorUsedError;
   @JsonKey(name: 'main')
-  MainInfo? get main => throw _privateConstructorUsedError;
+  MainInfo get main => throw _privateConstructorUsedError;
   @JsonKey(name: 'weather')
-  List<Weather>? get weather => throw _privateConstructorUsedError;
+  List<Weather> get weather => throw _privateConstructorUsedError;
   @JsonKey(name: 'clouds')
-  Clouds? get clouds => throw _privateConstructorUsedError;
+  Clouds get clouds => throw _privateConstructorUsedError;
   @JsonKey(name: 'wind')
-  Wind? get wind => throw _privateConstructorUsedError;
+  Wind get wind => throw _privateConstructorUsedError;
   @JsonKey(name: 'visibility')
-  int? get visibility => throw _privateConstructorUsedError;
+  int get visibility => throw _privateConstructorUsedError;
   @JsonKey(name: 'pop')
-  double? get pop => throw _privateConstructorUsedError;
+  double get pop => throw _privateConstructorUsedError;
   @JsonKey(name: 'sys')
-  SysForecast? get sys => throw _privateConstructorUsedError;
+  SysForecast get sys => throw _privateConstructorUsedError;
   @JsonKey(name: 'dt_txt')
-  String? get dtTxt => throw _privateConstructorUsedError;
+  String get dtTxt => throw _privateConstructorUsedError;
   @JsonKey(name: 'rain')
-  Rain? get rain => throw _privateConstructorUsedError;
+  Rain get rain => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -54,22 +54,22 @@ abstract class $ForecastListCopyWith<$Res> {
       _$ForecastListCopyWithImpl<$Res, ForecastList>;
   @useResult
   $Res call(
-      {@JsonKey(name: 'dt') int? dt,
-      @JsonKey(name: 'main') MainInfo? main,
-      @JsonKey(name: 'weather') List<Weather>? weather,
-      @JsonKey(name: 'clouds') Clouds? clouds,
-      @JsonKey(name: 'wind') Wind? wind,
-      @JsonKey(name: 'visibility') int? visibility,
-      @JsonKey(name: 'pop') double? pop,
-      @JsonKey(name: 'sys') SysForecast? sys,
-      @JsonKey(name: 'dt_txt') String? dtTxt,
-      @JsonKey(name: 'rain') Rain? rain});
+      {@JsonKey(name: 'dt') int dt,
+      @JsonKey(name: 'main') MainInfo main,
+      @JsonKey(name: 'weather') List<Weather> weather,
+      @JsonKey(name: 'clouds') Clouds clouds,
+      @JsonKey(name: 'wind') Wind wind,
+      @JsonKey(name: 'visibility') int visibility,
+      @JsonKey(name: 'pop') double pop,
+      @JsonKey(name: 'sys') SysForecast sys,
+      @JsonKey(name: 'dt_txt') String dtTxt,
+      @JsonKey(name: 'rain') Rain rain});
 
-  $MainInfoCopyWith<$Res>? get main;
-  $CloudsCopyWith<$Res>? get clouds;
-  $WindCopyWith<$Res>? get wind;
-  $SysForecastCopyWith<$Res>? get sys;
-  $RainCopyWith<$Res>? get rain;
+  $MainInfoCopyWith<$Res> get main;
+  $CloudsCopyWith<$Res> get clouds;
+  $WindCopyWith<$Res> get wind;
+  $SysForecastCopyWith<$Res> get sys;
+  $RainCopyWith<$Res> get rain;
 }
 
 /// @nodoc
@@ -85,117 +85,97 @@ class _$ForecastListCopyWithImpl<$Res, $Val extends ForecastList>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dt = freezed,
-    Object? main = freezed,
-    Object? weather = freezed,
-    Object? clouds = freezed,
-    Object? wind = freezed,
-    Object? visibility = freezed,
-    Object? pop = freezed,
-    Object? sys = freezed,
-    Object? dtTxt = freezed,
-    Object? rain = freezed,
+    Object? dt = null,
+    Object? main = null,
+    Object? weather = null,
+    Object? clouds = null,
+    Object? wind = null,
+    Object? visibility = null,
+    Object? pop = null,
+    Object? sys = null,
+    Object? dtTxt = null,
+    Object? rain = null,
   }) {
     return _then(_value.copyWith(
-      dt: freezed == dt
+      dt: null == dt
           ? _value.dt
           : dt // ignore: cast_nullable_to_non_nullable
-              as int?,
-      main: freezed == main
+              as int,
+      main: null == main
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
-              as MainInfo?,
-      weather: freezed == weather
+              as MainInfo,
+      weather: null == weather
           ? _value.weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<Weather>?,
-      clouds: freezed == clouds
+              as List<Weather>,
+      clouds: null == clouds
           ? _value.clouds
           : clouds // ignore: cast_nullable_to_non_nullable
-              as Clouds?,
-      wind: freezed == wind
+              as Clouds,
+      wind: null == wind
           ? _value.wind
           : wind // ignore: cast_nullable_to_non_nullable
-              as Wind?,
-      visibility: freezed == visibility
+              as Wind,
+      visibility: null == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pop: freezed == pop
+              as int,
+      pop: null == pop
           ? _value.pop
           : pop // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sys: freezed == sys
+              as double,
+      sys: null == sys
           ? _value.sys
           : sys // ignore: cast_nullable_to_non_nullable
-              as SysForecast?,
-      dtTxt: freezed == dtTxt
+              as SysForecast,
+      dtTxt: null == dtTxt
           ? _value.dtTxt
           : dtTxt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rain: freezed == rain
+              as String,
+      rain: null == rain
           ? _value.rain
           : rain // ignore: cast_nullable_to_non_nullable
-              as Rain?,
+              as Rain,
     ) as $Val);
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $MainInfoCopyWith<$Res>? get main {
-    if (_value.main == null) {
-      return null;
-    }
-
-    return $MainInfoCopyWith<$Res>(_value.main!, (value) {
+  $MainInfoCopyWith<$Res> get main {
+    return $MainInfoCopyWith<$Res>(_value.main, (value) {
       return _then(_value.copyWith(main: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $CloudsCopyWith<$Res>? get clouds {
-    if (_value.clouds == null) {
-      return null;
-    }
-
-    return $CloudsCopyWith<$Res>(_value.clouds!, (value) {
+  $CloudsCopyWith<$Res> get clouds {
+    return $CloudsCopyWith<$Res>(_value.clouds, (value) {
       return _then(_value.copyWith(clouds: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $WindCopyWith<$Res>? get wind {
-    if (_value.wind == null) {
-      return null;
-    }
-
-    return $WindCopyWith<$Res>(_value.wind!, (value) {
+  $WindCopyWith<$Res> get wind {
+    return $WindCopyWith<$Res>(_value.wind, (value) {
       return _then(_value.copyWith(wind: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $SysForecastCopyWith<$Res>? get sys {
-    if (_value.sys == null) {
-      return null;
-    }
-
-    return $SysForecastCopyWith<$Res>(_value.sys!, (value) {
+  $SysForecastCopyWith<$Res> get sys {
+    return $SysForecastCopyWith<$Res>(_value.sys, (value) {
       return _then(_value.copyWith(sys: value) as $Val);
     });
   }
 
   @override
   @pragma('vm:prefer-inline')
-  $RainCopyWith<$Res>? get rain {
-    if (_value.rain == null) {
-      return null;
-    }
-
-    return $RainCopyWith<$Res>(_value.rain!, (value) {
+  $RainCopyWith<$Res> get rain {
+    return $RainCopyWith<$Res>(_value.rain, (value) {
       return _then(_value.copyWith(rain: value) as $Val);
     });
   }
@@ -210,27 +190,27 @@ abstract class _$$_ForecastListCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {@JsonKey(name: 'dt') int? dt,
-      @JsonKey(name: 'main') MainInfo? main,
-      @JsonKey(name: 'weather') List<Weather>? weather,
-      @JsonKey(name: 'clouds') Clouds? clouds,
-      @JsonKey(name: 'wind') Wind? wind,
-      @JsonKey(name: 'visibility') int? visibility,
-      @JsonKey(name: 'pop') double? pop,
-      @JsonKey(name: 'sys') SysForecast? sys,
-      @JsonKey(name: 'dt_txt') String? dtTxt,
-      @JsonKey(name: 'rain') Rain? rain});
+      {@JsonKey(name: 'dt') int dt,
+      @JsonKey(name: 'main') MainInfo main,
+      @JsonKey(name: 'weather') List<Weather> weather,
+      @JsonKey(name: 'clouds') Clouds clouds,
+      @JsonKey(name: 'wind') Wind wind,
+      @JsonKey(name: 'visibility') int visibility,
+      @JsonKey(name: 'pop') double pop,
+      @JsonKey(name: 'sys') SysForecast sys,
+      @JsonKey(name: 'dt_txt') String dtTxt,
+      @JsonKey(name: 'rain') Rain rain});
 
   @override
-  $MainInfoCopyWith<$Res>? get main;
+  $MainInfoCopyWith<$Res> get main;
   @override
-  $CloudsCopyWith<$Res>? get clouds;
+  $CloudsCopyWith<$Res> get clouds;
   @override
-  $WindCopyWith<$Res>? get wind;
+  $WindCopyWith<$Res> get wind;
   @override
-  $SysForecastCopyWith<$Res>? get sys;
+  $SysForecastCopyWith<$Res> get sys;
   @override
-  $RainCopyWith<$Res>? get rain;
+  $RainCopyWith<$Res> get rain;
 }
 
 /// @nodoc
@@ -244,58 +224,58 @@ class __$$_ForecastListCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? dt = freezed,
-    Object? main = freezed,
-    Object? weather = freezed,
-    Object? clouds = freezed,
-    Object? wind = freezed,
-    Object? visibility = freezed,
-    Object? pop = freezed,
-    Object? sys = freezed,
-    Object? dtTxt = freezed,
-    Object? rain = freezed,
+    Object? dt = null,
+    Object? main = null,
+    Object? weather = null,
+    Object? clouds = null,
+    Object? wind = null,
+    Object? visibility = null,
+    Object? pop = null,
+    Object? sys = null,
+    Object? dtTxt = null,
+    Object? rain = null,
   }) {
     return _then(_$_ForecastList(
-      dt: freezed == dt
+      dt: null == dt
           ? _value.dt
           : dt // ignore: cast_nullable_to_non_nullable
-              as int?,
-      main: freezed == main
+              as int,
+      main: null == main
           ? _value.main
           : main // ignore: cast_nullable_to_non_nullable
-              as MainInfo?,
-      weather: freezed == weather
+              as MainInfo,
+      weather: null == weather
           ? _value._weather
           : weather // ignore: cast_nullable_to_non_nullable
-              as List<Weather>?,
-      clouds: freezed == clouds
+              as List<Weather>,
+      clouds: null == clouds
           ? _value.clouds
           : clouds // ignore: cast_nullable_to_non_nullable
-              as Clouds?,
-      wind: freezed == wind
+              as Clouds,
+      wind: null == wind
           ? _value.wind
           : wind // ignore: cast_nullable_to_non_nullable
-              as Wind?,
-      visibility: freezed == visibility
+              as Wind,
+      visibility: null == visibility
           ? _value.visibility
           : visibility // ignore: cast_nullable_to_non_nullable
-              as int?,
-      pop: freezed == pop
+              as int,
+      pop: null == pop
           ? _value.pop
           : pop // ignore: cast_nullable_to_non_nullable
-              as double?,
-      sys: freezed == sys
+              as double,
+      sys: null == sys
           ? _value.sys
           : sys // ignore: cast_nullable_to_non_nullable
-              as SysForecast?,
-      dtTxt: freezed == dtTxt
+              as SysForecast,
+      dtTxt: null == dtTxt
           ? _value.dtTxt
           : dtTxt // ignore: cast_nullable_to_non_nullable
-              as String?,
-      rain: freezed == rain
+              as String,
+      rain: null == rain
           ? _value.rain
           : rain // ignore: cast_nullable_to_non_nullable
-              as Rain?,
+              as Rain,
     ));
   }
 }
@@ -304,16 +284,16 @@ class __$$_ForecastListCopyWithImpl<$Res>
 @JsonSerializable()
 class _$_ForecastList implements _ForecastList {
   const _$_ForecastList(
-      {@JsonKey(name: 'dt') this.dt,
-      @JsonKey(name: 'main') this.main,
-      @JsonKey(name: 'weather') final List<Weather>? weather,
-      @JsonKey(name: 'clouds') this.clouds,
-      @JsonKey(name: 'wind') this.wind,
-      @JsonKey(name: 'visibility') this.visibility,
-      @JsonKey(name: 'pop') this.pop,
-      @JsonKey(name: 'sys') this.sys,
-      @JsonKey(name: 'dt_txt') this.dtTxt,
-      @JsonKey(name: 'rain') this.rain})
+      {@JsonKey(name: 'dt') this.dt = 0,
+      @JsonKey(name: 'main') this.main = ForecastList.defMain,
+      @JsonKey(name: 'weather') final List<Weather> weather = const [],
+      @JsonKey(name: 'clouds') this.clouds = ForecastList.defClouds,
+      @JsonKey(name: 'wind') this.wind = ForecastList.defWind,
+      @JsonKey(name: 'visibility') this.visibility = 0,
+      @JsonKey(name: 'pop') this.pop = 0.0,
+      @JsonKey(name: 'sys') this.sys = ForecastList.defSysforecast,
+      @JsonKey(name: 'dt_txt') this.dtTxt = '',
+      @JsonKey(name: 'rain') this.rain = ForecastList.defRain})
       : _weather = weather;
 
   factory _$_ForecastList.fromJson(Map<String, dynamic> json) =>
@@ -321,42 +301,40 @@ class _$_ForecastList implements _ForecastList {
 
   @override
   @JsonKey(name: 'dt')
-  final int? dt;
+  final int dt;
   @override
   @JsonKey(name: 'main')
-  final MainInfo? main;
-  final List<Weather>? _weather;
+  final MainInfo main;
+  final List<Weather> _weather;
   @override
   @JsonKey(name: 'weather')
-  List<Weather>? get weather {
-    final value = _weather;
-    if (value == null) return null;
+  List<Weather> get weather {
     if (_weather is EqualUnmodifiableListView) return _weather;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(value);
+    return EqualUnmodifiableListView(_weather);
   }
 
   @override
   @JsonKey(name: 'clouds')
-  final Clouds? clouds;
+  final Clouds clouds;
   @override
   @JsonKey(name: 'wind')
-  final Wind? wind;
+  final Wind wind;
   @override
   @JsonKey(name: 'visibility')
-  final int? visibility;
+  final int visibility;
   @override
   @JsonKey(name: 'pop')
-  final double? pop;
+  final double pop;
   @override
   @JsonKey(name: 'sys')
-  final SysForecast? sys;
+  final SysForecast sys;
   @override
   @JsonKey(name: 'dt_txt')
-  final String? dtTxt;
+  final String dtTxt;
   @override
   @JsonKey(name: 'rain')
-  final Rain? rain;
+  final Rain rain;
 
   @override
   String toString() {
@@ -412,50 +390,50 @@ class _$_ForecastList implements _ForecastList {
 
 abstract class _ForecastList implements ForecastList {
   const factory _ForecastList(
-      {@JsonKey(name: 'dt') final int? dt,
-      @JsonKey(name: 'main') final MainInfo? main,
-      @JsonKey(name: 'weather') final List<Weather>? weather,
-      @JsonKey(name: 'clouds') final Clouds? clouds,
-      @JsonKey(name: 'wind') final Wind? wind,
-      @JsonKey(name: 'visibility') final int? visibility,
-      @JsonKey(name: 'pop') final double? pop,
-      @JsonKey(name: 'sys') final SysForecast? sys,
-      @JsonKey(name: 'dt_txt') final String? dtTxt,
-      @JsonKey(name: 'rain') final Rain? rain}) = _$_ForecastList;
+      {@JsonKey(name: 'dt') final int dt,
+      @JsonKey(name: 'main') final MainInfo main,
+      @JsonKey(name: 'weather') final List<Weather> weather,
+      @JsonKey(name: 'clouds') final Clouds clouds,
+      @JsonKey(name: 'wind') final Wind wind,
+      @JsonKey(name: 'visibility') final int visibility,
+      @JsonKey(name: 'pop') final double pop,
+      @JsonKey(name: 'sys') final SysForecast sys,
+      @JsonKey(name: 'dt_txt') final String dtTxt,
+      @JsonKey(name: 'rain') final Rain rain}) = _$_ForecastList;
 
   factory _ForecastList.fromJson(Map<String, dynamic> json) =
       _$_ForecastList.fromJson;
 
   @override
   @JsonKey(name: 'dt')
-  int? get dt;
+  int get dt;
   @override
   @JsonKey(name: 'main')
-  MainInfo? get main;
+  MainInfo get main;
   @override
   @JsonKey(name: 'weather')
-  List<Weather>? get weather;
+  List<Weather> get weather;
   @override
   @JsonKey(name: 'clouds')
-  Clouds? get clouds;
+  Clouds get clouds;
   @override
   @JsonKey(name: 'wind')
-  Wind? get wind;
+  Wind get wind;
   @override
   @JsonKey(name: 'visibility')
-  int? get visibility;
+  int get visibility;
   @override
   @JsonKey(name: 'pop')
-  double? get pop;
+  double get pop;
   @override
   @JsonKey(name: 'sys')
-  SysForecast? get sys;
+  SysForecast get sys;
   @override
   @JsonKey(name: 'dt_txt')
-  String? get dtTxt;
+  String get dtTxt;
   @override
   @JsonKey(name: 'rain')
-  Rain? get rain;
+  Rain get rain;
   @override
   @JsonKey(ignore: true)
   _$$_ForecastListCopyWith<_$_ForecastList> get copyWith =>
