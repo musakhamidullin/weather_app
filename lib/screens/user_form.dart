@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../core/widget/base_widget.dart';
 
 import '../features/user_form/bloc/user/user_bloc.dart';
 import '../features/user_form/widgets/text_field.dart';
@@ -34,7 +33,6 @@ class _UserFormScreenState extends State<UserFormScreen> {
                     builder: (context) => const WeatherScreen(),
                   ));
             }
-
             if (state.fireBaseStatus == FireBaseStatus.loginPassword) {
               ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                   content: Text('Неверная почта или неверный пароль!')));
@@ -44,11 +42,14 @@ class _UserFormScreenState extends State<UserFormScreen> {
               ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(content: Text('Соединение потеряно!')));
             }
+
+            if (state.fireBaseStatus == FireBaseStatus.loginPassword) {
+              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                  content: Text('Загрузка...')));
+            }
           },
           builder: (context, state) {
-            return BaseWidget(
-              status: state.status,
-              widget: Padding(
+            return Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 16, vertical: 100),
                 child: Column(
@@ -108,8 +109,7 @@ class _UserFormScreenState extends State<UserFormScreen> {
                     )
                   ],
                 ),
-              ),
-            );
+              );
           },
         ),
       ),

@@ -63,6 +63,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '151838551939',
     projectId: 'auth-weather-app',
     storageBucket: 'auth-weather-app.appspot.com',
+    androidClientId: '151838551939-s7vnquke4daik6vfhg25n6qcda9nhsnl.apps.googleusercontent.com',
     iosClientId: '151838551939-kugloorn88t2093l8icd52t39d316kib.apps.googleusercontent.com',
     iosBundleId: 'com.example.weatherApp',
   );

@@ -13,61 +13,61 @@ import '../theme.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider<WeatherBloc>(
-      create: (_) => WeatherBloc(SearchRepo()),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeApp.get(),
-        home: CustomPaint(
-          painter: BackgroundPainter(),
-          child: Scaffold(
-              backgroundColor: Colors.transparent,
-              appBar: PreferredSize(
-                preferredSize: const  Size.fromHeight(56),
-                child: BlocBuilder<WeatherBloc, WeatherState>(
-                  builder: (context, state) {
-                    return AppBar(
-                        title: ListTile(
-                      leading: SvgPicture.asset('assets/icons/pin.svg'),
-                      title: Text(
-                        '${state.weatherDataModel.name}, ${state.weatherDataModel.sys.country}',
-                      ),
-                    ));
-                  },
-                ),
-              ),
-              body: CustomPaint(
-                painter: CirclePainter(MediaQuery.sizeOf(context)),
-                child: Padding(
+      create: (_) =>  WeatherBloc(SearchRepo()),
+      child: CustomPaint(
+        painter: BackgroundPainter(),
+        child: Scaffold(
+          backgroundColor: Colors.transparent,
+          appBar: PreferredSize(
+            preferredSize: const Size.fromHeight(56),
+            child: BlocBuilder<WeatherBloc, WeatherState>(
+              builder: (context, state) {
+                return BaseWidget(
+                  status: state.status,
+                  widget: AppBar(
+                      title: ListTile(
+                    leading: SvgPicture.asset('assets/icons/pin.svg'),
+                    title: Text(
+                      '${state.weatherDataModel.name}, ${state.weatherDataModel.sys.country}',
+                    ),
+                  )),
+                );
+              },
+            ),
+          ),
+          body: BlocBuilder<WeatherBloc, WeatherState>(
+            builder: (context, state) {
+              return BaseWidget(
+                status: state.status,
+                widget: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: BlocBuilder<WeatherBloc, WeatherState>(
-                    builder: (context, state) {
-                      return BaseWidget(
-                        status: state.status,
-                        widget: Column(
-                          children: [
-                            if (state.weatherDataModel.weather.isNotEmpty)
-                              TopWeatherWidget(
-                                  mainInfo: state.weatherDataModel.main,
-                                  weather:
-                                      state.weatherDataModel.weather.first),
-                            padding,
-                            BodyWeatherWidget(
-                                namePlace:
-                                    '${state.weatherDataModel.name}, ${state.weatherDataModel.sys.country}'),
-                            padding,
-                            BottomWeatherWidget(
-                                wind: state.weatherDataModel.wind,
-                                main: state.weatherDataModel.main)
-                          ],
-                        ),
-                      );
-                    },
+                  child: CustomPaint(
+                    painter: CirclePainter(MediaQuery.sizeOf(context)),
+                    child: Column(
+                      children: [
+                        if (state.weatherDataModel.weather.isNotEmpty)
+                          TopWeatherWidget(
+                              mainInfo: state.weatherDataModel.main,
+                              weather: state.weatherDataModel.weather.first),
+                        padding,
+                        BodyWeatherWidget(
+                            namePlace:
+                                '${state.weatherDataModel.name}, ${state.weatherDataModel.sys.country}'),
+                        padding,
+                        BottomWeatherWidget(
+                            wind: state.weatherDataModel.wind,
+                            main: state.weatherDataModel.main)
+                      ],
+                    ),
                   ),
                 ),
-              )),
+              );
+            },
+          )
         ),
       ),
     );

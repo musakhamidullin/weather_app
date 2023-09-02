@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import '../data/models/status.dart';
+import 'failure_widget.dart';
 import 'loading_widget.dart';
 
 // ignore: must_be_immutable
@@ -23,13 +24,14 @@ class BaseWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-      widget,
-
-      if(status == Status.loading ) const LoadingWidget()
-
-      ],
-    );
+    return widget = switch (status) {
+      Status.unKnown => defaultWidget ?? const SizedBox.shrink(),
+      Status.success => widget,
+      Status.loading => loadingWidget ?? const LoadingWidget(),
+      Status.failure => Center(
+            child: FailureWidget(
+          onTapped: () => onFailurePressedButton?.call(),
+        )),
+    };
   }
 }

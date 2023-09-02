@@ -1,8 +1,7 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:geolocator/geolocator.dart';
+
 import '../../../core/core.dart';
 import '../data/search_repo.dart';
 
@@ -25,18 +24,19 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
           emit(state.copyWith(
               status: Status.success,
               weatherDataModel: request,
-              forecastList: forecast));
+              forecastList: forecast
+              ));
         } catch (_) {
           emit(state.copyWith(status: Status.failure));
         }
       },
     );
 
-
     _getLocation();
   }
 
-   Future<void> _getLocation() async {
+
+  Future<void> _getLocation() async {
     var status = await Geolocator.checkPermission();
 
     if (status == LocationPermission.always ||
@@ -44,8 +44,10 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
       Position position = await Geolocator.getCurrentPosition(
           desiredAccuracy: LocationAccuracy.high);
 
-      add(WeatherEvent.onSend(
-          latitude: position.latitude, longitude: position.longitude));
+      if (!isClosed) {
+        add(WeatherEvent.onSend(
+            latitude: position.latitude, longitude: position.longitude));
+      }
     }
   }
 
