@@ -12,11 +12,11 @@ import 'theme.dart';
 
 void main() async {
   runZonedGuarded(() async {
-
     WidgetsFlutterBinding.ensureInitialized();
 
     await _fbInit();
 
+    // mock, shoulde be native splash screen
     runApp(const SplashScreen());
 
     await Geolocator.checkPermission();
@@ -25,7 +25,6 @@ void main() async {
     await Future.delayed(const Duration(seconds: 2));
 
     runApp(MaterialApp(theme: ThemeApp.get(), home: const UserFormScreen()));
-    
   }, (error, stack) {
     debugPrint(stack.toString());
   });

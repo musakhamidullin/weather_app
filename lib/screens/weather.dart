@@ -13,7 +13,6 @@ import '../theme.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider<WeatherBloc>(
@@ -25,20 +24,20 @@ class WeatherScreen extends StatelessWidget {
           painter: BackgroundPainter(),
           child: Scaffold(
               backgroundColor: Colors.transparent,
-              appBar: AppBar(
-                  title: ListTile(
-                leading: SvgPicture.asset('assets/icons/pin.svg'),
-                title: BlocBuilder<WeatherBloc, WeatherState>(
+              appBar: PreferredSize(
+                preferredSize: const  Size.fromHeight(56),
+                child: BlocBuilder<WeatherBloc, WeatherState>(
                   builder: (context, state) {
-                    return BaseWidget(
-                      status: state.status,
-                      widget: Text(
+                    return AppBar(
+                        title: ListTile(
+                      leading: SvgPicture.asset('assets/icons/pin.svg'),
+                      title: Text(
                         '${state.weatherDataModel.name}, ${state.weatherDataModel.sys.country}',
                       ),
-                    );
+                    ));
                   },
                 ),
-              )),
+              ),
               body: CustomPaint(
                 painter: CirclePainter(MediaQuery.sizeOf(context)),
                 child: Padding(
@@ -54,11 +53,11 @@ class WeatherScreen extends StatelessWidget {
                                   mainInfo: state.weatherDataModel.main,
                                   weather:
                                       state.weatherDataModel.weather.first),
-                            paddingX2,
+                            padding,
                             BodyWeatherWidget(
                                 namePlace:
                                     '${state.weatherDataModel.name}, ${state.weatherDataModel.sys.country}'),
-                            paddingX2,
+                            padding,
                             BottomWeatherWidget(
                                 wind: state.weatherDataModel.wind,
                                 main: state.weatherDataModel.main)

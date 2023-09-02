@@ -18,14 +18,12 @@ class _UserFormScreenState extends State<UserFormScreen> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwController = TextEditingController();
 
-  final UserBloc _userBloc = UserBloc();
-
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
 
     return BlocProvider<UserBloc>(
-      create: (_) => _userBloc,
+      create: (_) => UserBloc(),
       child: Scaffold(
         body: BlocConsumer<UserBloc, UserState>(
           listener: (context, state) {

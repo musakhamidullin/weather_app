@@ -4,7 +4,6 @@ import 'package:flutter_svg/svg.dart';
 import 'package:intl/intl.dart';
 
 import '../../../core/core.dart';
-import '../../../core/widget/base_widget.dart';
 import '../../../theme.dart';
 import '../bloc/weather_bloc.dart';
 
@@ -30,6 +29,17 @@ class _BodyWeatherWidgetState extends State<BodyWeatherWidget> {
   void initState() {
     super.initState();
     _scrollController.addListener(_scrollListener);
+
+    list = context.read<WeatherBloc>().state.forecastList.list;
+
+    if (list.isNotEmpty) temp = list.first;
+  }
+
+  @override
+  void didUpdateWidget(covariant BodyWeatherWidget oldWidget) {
+    super.didUpdateWidget(oldWidget);
+
+    list = context.read<WeatherBloc>().state.forecastList.list;
   }
 
   @override
@@ -95,38 +105,19 @@ class _BodyWeatherWidgetState extends State<BodyWeatherWidget> {
           ),
           Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              child: BlocConsumer<WeatherBloc, WeatherState>(
-                listenWhen: (previous, current) =>
-                    previous.forecastList.list.length !=
-                    current.forecastList.list.length,
-                listener: (context, state) {
-                  list = state.forecastList.list;
-
-                  if (temp.dtTxt.isEmpty) {
-                    temp = list.first;
-                  }
-                },
-                builder: (context, state) {
-                  return SizedBox(
-                    height: 140,
-                    child: BaseWidget(
-                      status: state.status,
-                      widget: ListView.separated(
-                        controller: _scrollController,
-                        separatorBuilder: (context, index) =>
-                            const SizedBox(width: 8),
-                        scrollDirection: Axis.horizontal,
-                        itemCount: state.forecastList.list.length,
-                        itemBuilder: (context, i) => ForecastWidget(
-                          forecastList: state.forecastList.list[i],
-                          color: i == _upcomingItemIndex
-                              ? Colors.red
-                              : Colors.white,
-                        ),
-                      ),
-                    ),
-                  );
-                },
+              child: SizedBox(
+                height: 140,
+                child: ListView.separated(
+                  controller: _scrollController,
+                  separatorBuilder: (context, index) =>
+                      const SizedBox(width: 8),
+                  scrollDirection: Axis.horizontal,
+                  itemCount: list.length,
+                  itemBuilder: (context, i) => ForecastWidget(
+                    forecastList: list[i],
+                    color: i == _upcomingItemIndex ? Colors.red : Colors.white,
+                  ),
+                ),
               ))
         ],
       ),

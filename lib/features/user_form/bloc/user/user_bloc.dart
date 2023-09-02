@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../../core/core.dart';
@@ -17,11 +18,12 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         FirebaseAuth auth = FirebaseAuth.instance;
 
         await auth.signInWithEmailAndPassword(
-            email: event.email, password: event.password);
+            email: event.email.trim(), password: event.password.trim());
 
         emit(state.copyWith(
             fireBaseStatus: FireBaseStatus.success, status: Status.success));
       } on FirebaseAuthException catch (e) {
+        debugPrint(e.message);
         if (e.message?.contains(
                 'The password is invalid or the user does not have a password.') ??
             false) {
